@@ -33,6 +33,9 @@ const routers = createBrowserRouter([
       element: routersObj[key].component,
     })),
   },
+  {
+    basename: window.location.pathname || "",
+  },
 ]);
 
 export default routers;
