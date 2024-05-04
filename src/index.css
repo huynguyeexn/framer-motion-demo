@@ -37,7 +37,7 @@ button {
   padding: 10px 30px;
   font-size: 1em;
   background: transparent;
-  border-radius: calc(infinity * 1px);
+  border-radius: 50px;
   border: 1px solid white;
   margin: 40px auto 0;
   cursor: pointer;
