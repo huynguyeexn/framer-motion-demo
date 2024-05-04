@@ -1,30 +1,30 @@
-import { createBrowserRouter } from "react-router-dom";
-import HomePage from "../pages/home";
-import BasePage from "../pages/base";
-import ToppingPage from "../pages/topping";
-import OrderPage from "../pages/order";
+import { createHashRouter } from "react-router-dom";
 import Layout from "../components/layout";
+import BasePage from "../pages/base";
+import HomePage from "../pages/home";
+import OrderPage from "../pages/order";
+import ToppingPage from "../pages/topping";
 
 export const routersObj = {
   home: {
-    path: "/",
+    path: "",
     component: <HomePage />,
   },
   base: {
-    path: "/base",
+    path: "base",
     component: <BasePage />,
   },
   topping: {
-    path: "/toppings",
+    path: "toppings",
     component: <ToppingPage />,
   },
   order: {
-    path: "/order",
+    path: "order",
     component: <OrderPage />,
   },
 };
 
-const routers = createBrowserRouter([
+const routers = createHashRouter([
   {
     path: "/",
     element: <Layout />,
