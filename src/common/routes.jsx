@@ -3,6 +3,7 @@ import HomePage from "../pages/home";
 import BasePage from "../pages/base";
 import ToppingPage from "../pages/topping";
 import OrderPage from "../pages/order";
+import Layout from "../components/layout";
 
 export const routersObj = {
   home: {
@@ -14,7 +15,7 @@ export const routersObj = {
     component: <BasePage />,
   },
   topping: {
-    path: "/topping",
+    path: "/toppings",
     component: <ToppingPage />,
   },
   order: {
@@ -23,11 +24,15 @@ export const routersObj = {
   },
 };
 
-const routers = createBrowserRouter(
-  Object.keys(routersObj).map((key) => ({
-    path: routersObj[key].path,
-    element: routersObj[key].component,
-  }))
-);
+const routers = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    children: Object.keys(routersObj).map((key) => ({
+      path: routersObj[key].path,
+      element: routersObj[key].component,
+    })),
+  },
+]);
 
 export default routers;

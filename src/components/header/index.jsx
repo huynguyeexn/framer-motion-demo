@@ -1,14 +1,15 @@
 import React from "react";
 import logo from "../../assets/logo.svg";
 
+import { Link } from "react-router-dom";
 import "./style.css";
 
 const Header = () => {
   return (
     <header>
-      <div className="logo">
+      <Link to="/" className="logo">
         <img src={logo} className="app-logo" alt="logo" />
-      </div>
+      </Link>
       <div className="title">
         <h1>Hui Pizza</h1>
       </div>
