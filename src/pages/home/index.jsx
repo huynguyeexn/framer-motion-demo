@@ -9,27 +9,20 @@ import { PizzaContext } from "../../App";
 const HomePage = () => {
   const { resetPizza } = useContext(PizzaContext);
   return (
-    <div className="home container">
-      <motion.h2
-        animate={{
-          fontSize: "50px",
-          color: "#ff2994",
-          y: -50,
-        }}
-      >
-        Welcome to Pizza Joint
-      </motion.h2>
+    <motion.div
+      className="home container"
+      initial={{
+        opacity: 0,
+      }}
+      animate={{
+        opacity: 1,
+      }}
+    >
+      <h2>Welcome to Pizza Joint</h2>
       <Link to={routersObj.base.path} onClick={resetPizza}>
-        <motion.button
-          animate={{
-            rotateZ: "360deg",
-            scale: 1.5,
-          }}
-        >
-          Create Your Pizza
-        </motion.button>
+        <button>Create Your Pizza</button>
       </Link>
-    </div>
+    </motion.div>
   );
 };
 

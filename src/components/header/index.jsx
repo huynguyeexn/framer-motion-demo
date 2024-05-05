@@ -1,7 +1,8 @@
 import React from "react";
 import logo from "../../assets/logo.svg";
-
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+
 import "./style.css";
 
 const Header = () => {
@@ -10,9 +11,9 @@ const Header = () => {
       <Link to="/" className="logo">
         <img src={logo} className="app-logo" alt="logo" />
       </Link>
-      <div className="title">
+      <motion.div className="title" initial={{ y: -300 }} animate={{ y: 0 }}>
         <h1>Hui Pizza</h1>
-      </div>
+      </motion.div>
     </header>
   );
 };

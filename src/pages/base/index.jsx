@@ -1,6 +1,7 @@
+import { motion } from "framer-motion";
 import React, { useContext } from "react";
-import { PizzaContext } from "../../App";
 import { Link } from "react-router-dom";
+import { PizzaContext } from "../../App";
 import PrevButton from "../../components/prev-button";
 
 const BasePage = () => {
@@ -35,11 +36,21 @@ const BasePage = () => {
         <PrevButton />
 
         {pizza.base && (
-          <div className="next">
+          <motion.div
+            className="next"
+            initial={{
+              x: "100vw",
+              opacity: 0,
+            }}
+            animate={{
+              x: 0,
+              opacity: 1,
+            }}
+          >
             <Link to="/toppings">
               <button>Next</button>
             </Link>
-          </div>
+          </motion.div>
         )}
       </div>
     </div>
