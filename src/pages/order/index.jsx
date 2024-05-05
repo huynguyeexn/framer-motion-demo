@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { PizzaContext } from "../../App";
+import { motion } from "framer-motion";
 
 const OrderPage = () => {
   const { pizza, resetPizza } = useContext(PizzaContext);
@@ -21,7 +22,15 @@ const OrderPage = () => {
       )}
       <div className="prev">
         <Link to="/" onClick={resetPizza}>
-          <button>New Order</button>
+          <motion.button
+            whileHover={{
+              scale: 1.2,
+              textShadow: "0px 0px 10px #ffffff",
+              boxShadow: "0px 0px 10px #ffffff",
+            }}
+          >
+            New Order
+          </motion.button>
         </Link>
       </div>
     </div>

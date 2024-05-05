@@ -22,7 +22,7 @@ const HomePage = () => {
         duration: 0.5,
       }}
     >
-      <h2>Welcome to Pizza Joint</h2>
+      <h2>Welcome to Hui Pizza</h2>
       <Link to={routersObj.base.path} onClick={resetPizza}>
         <motion.button
           initial={{
@@ -31,8 +31,10 @@ const HomePage = () => {
           animate={{
             scale: 1,
           }}
-          transition={{
-            delay: 0.6,
+          whileHover={{
+            scale: 1.2,
+            textShadow: "0px 0px 10px #ffffff",
+            boxShadow: "0px 0px 10px #ffffff",
           }}
         >
           Create Your Pizza

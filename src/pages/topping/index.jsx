@@ -44,11 +44,22 @@ const ToppingPage = () => {
       <ul>
         {React.Children.toArray(
           toppings.map((item) => (
-            <li onClick={() => handleChooseTopping(item)}>
+            <motion.li
+              onClick={() => handleChooseTopping(item)}
+              whileHover={{
+                scale: 1.3,
+                originX: 0,
+                color: "#f8e112",
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 500,
+              }}
+            >
               <span className={pizza.toppings.includes(item) ? "active" : ""}>
                 {item}
               </span>
-            </li>
+            </motion.li>
           ))
         )}
       </ul>
@@ -56,7 +67,15 @@ const ToppingPage = () => {
         <PrevButton />
         <div className="next">
           <Link to="/order">
-            <button>Order</button>
+            <motion.button
+              whileHover={{
+                scale: 1.2,
+                textShadow: "0px 0px 10px #ffffff",
+                boxShadow: "0px 0px 10px #ffffff",
+              }}
+            >
+              Order
+            </motion.button>
           </Link>
         </div>
       </div>

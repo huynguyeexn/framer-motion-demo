@@ -32,11 +32,22 @@ const BasePage = () => {
       <ul>
         {React.Children.toArray(
           bases.map((item) => (
-            <li onClick={() => handleChooseBase(item)}>
+            <motion.li
+              onClick={() => handleChooseBase(item)}
+              whileHover={{
+                scale: 1.3,
+                originX: 0,
+                color: "#f8e112",
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 500,
+              }}
+            >
               <span className={item === pizza.base ? "active" : ""}>
                 {item}
               </span>
-            </li>
+            </motion.li>
           ))
         )}
       </ul>
@@ -56,7 +67,15 @@ const BasePage = () => {
             }}
           >
             <Link to="/toppings">
-              <button>Next</button>
+              <motion.button
+                whileHover={{
+                  scale: 1.2,
+                  textShadow: "0px 0px 10px #ffffff",
+                  boxShadow: "0px 0px 10px #ffffff",
+                }}
+              >
+                Next
+              </motion.button>
             </Link>
           </motion.div>
         )}
