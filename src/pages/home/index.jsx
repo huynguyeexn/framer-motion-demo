@@ -17,10 +17,26 @@ const HomePage = () => {
       animate={{
         opacity: 1,
       }}
+      transition={{
+        delay: 0.3,
+        duration: 0.5,
+      }}
     >
       <h2>Welcome to Pizza Joint</h2>
       <Link to={routersObj.base.path} onClick={resetPizza}>
-        <button>Create Your Pizza</button>
+        <motion.button
+          initial={{
+            scale: 0.001,
+          }}
+          animate={{
+            scale: 1,
+          }}
+          transition={{
+            delay: 0.6,
+          }}
+        >
+          Create Your Pizza
+        </motion.button>
       </Link>
     </motion.div>
   );

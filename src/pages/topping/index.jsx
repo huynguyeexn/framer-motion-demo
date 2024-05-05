@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { PizzaContext } from "../../App";
 import PrevButton from "../../components/prev-button";
+import { motion } from "framer-motion";
 
 const ToppingPage = () => {
   let toppings = [
@@ -29,8 +30,16 @@ const ToppingPage = () => {
   };
 
   return (
-    <div className="topping container">
-      <h3>Step 2: Choose your base</h3>
+    <motion.div
+      className="topping container"
+      initial={{
+        opacity: 0,
+      }}
+      animate={{
+        opacity: 1,
+      }}
+    >
+      <h3>Step 2: Choose your toppings</h3>
 
       <ul>
         {React.Children.toArray(
@@ -51,7 +60,7 @@ const ToppingPage = () => {
           </Link>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

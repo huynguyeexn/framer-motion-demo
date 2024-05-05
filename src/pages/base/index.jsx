@@ -19,7 +19,15 @@ const BasePage = () => {
   console.log(pizza);
 
   return (
-    <div className="base container">
+    <motion.div
+      className="base container"
+      initial={{
+        x: "150vw",
+      }}
+      animate={{
+        x: 0,
+      }}
+    >
       <h3>Step 1: Choose your base</h3>
       <ul>
         {React.Children.toArray(
@@ -53,7 +61,7 @@ const BasePage = () => {
           </motion.div>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
